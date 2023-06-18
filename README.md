@@ -119,8 +119,8 @@ users books transactions 三个表
 # [
 #   {
 #     "id":1,"title":"如何阅读一本书",
-#     "inventory":1,"total_items":2,"borrowing_times":1,
-#     "borrow_price":"3.0",
+#     "inventory":1(当前库存),"total_items":2(借出去和库存总共多少),"borrowing_times":1(借阅次数),
+#     "borrow_price":"3.0"(当前借阅的一本的费用),
 #     "created_at":"2023-06-18T08:56:51.642Z",
 #     "updated_at":"2023-06-18T08:58:10.289Z"
 #   },
