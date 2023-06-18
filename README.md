@@ -3,9 +3,10 @@
 users books transactions 三个表
 
 2. 根据api需求，写相关的路由以及代码
+
 ```ruby
 # 1. 创建用户接口
-# post http://localhost:3000/users 
+# post https://libborrowing.fly.dev/users 
 # params: { "username": "abcd", "password": "12345678", "balance": 120 }
 # 返回数据:
 # {
@@ -17,7 +18,7 @@ users books transactions 三个表
 # }
 
 # 2. 创建借阅交易
-# post http://localhost:3000/transactions/borrowing
+# post https://libborrowing.fly.dev/transactions/borrowing
 # params: { "user_id": 1, "book_id": 1 }
 # 返回数据:
 # {
@@ -39,7 +40,7 @@ users books transactions 三个表
 # }
 
 # 3. 创建返回交易
-# post http://localhost:3000/transactions/send_back
+# post https://libborrowing.fly.dev/transactions/send_back
 # params: { "user_id": 1, "book_id": 1 }
 # 返回数据:
 # {
@@ -61,7 +62,7 @@ users books transactions 三个表
 # }
 
 # 4. 查询用户的账户状态，参数为用户ID，返回当前余额，借书
-# get http://localhost:3000/users/1
+# get https://libborrowing.fly.dev/users/1
 # 返回数据:
 # {
 #     "status": "success",
@@ -78,7 +79,7 @@ users books transactions 三个表
 # }
 
 # 5. 某本书的实际收入
-# get http://localhost:3000/books/1/income?start_time=2023-05-12&end_time=2023-06-18
+# get https://libborrowing.fly.dev/books/1/income?start_time=2023-05-12&end_time=2023-06-18
 # 返回数据:
 # {
 #     "status": "success",
@@ -89,7 +90,7 @@ users books transactions 三个表
 # }
 
 # 6. 月度和年度报告
-# get http://localhost:3000/users/1/reports
+# get https://libborrowing.fly.dev/users/1/reports
 # 返回数据:
 # {
 #     "status": "success",
@@ -111,4 +112,27 @@ users books transactions 三个表
 #         ]
 #     }
 # }
+```
+
+```ruby
+# 书的数据
+# [
+#   {
+#     "id":1,"title":"如何阅读一本书",
+#     "inventory":1,"total_items":2,"borrowing_times":1,
+#     "borrow_price":"3.0",
+#     "created_at":"2023-06-18T08:56:51.642Z",
+#     "updated_at":"2023-06-18T08:58:10.289Z"
+#   },
+#   {
+#     "id":2,"title":"学会提问","inventory":6,
+#     "total_items":6,"borrowing_times":0,"borrow_price":"5.0",
+#     "created_at":"2023-06-18T08:56:51.644Z","updated_at":"2023-06-18T08:56:51.644Z"
+#   },
+#   {
+#     "id":3,"title":"思考，快与慢","inventory":8,"total_items":8,
+#     "borrowing_times":0,"borrow_price":"6.0","created_at":"2023-06-18T08:56:51.645Z",
+#     "updated_at":"2023-06-18T08:56:51.645Z"
+#   }
+# ]
 ```
