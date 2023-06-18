@@ -6,7 +6,7 @@ users books transactions 三个表
 ```ruby
 # 1. 创建用户接口
 # post http://localhost:3000/users 
-# params: { "username": "abcd", "password": "zaq12wsx", "balance": 120 }
+# params: { "username": "abcd", "password": "12345678", "balance": 120 }
 # 返回数据:
 # {
 #     "status": "success",
