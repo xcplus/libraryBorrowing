@@ -43,10 +43,10 @@ class User < ApplicationRecord
   end
 
   def month_borrowings
-    self.transactions.borrowing.select("DATE_TRUNC('month', trans_time) AS month, SUM(price) AS cost, COUNT(book_id) as book_counts").group("month")
+    self.transactions.borrowing.select("strftime('%Y-%m', trans_time) AS month, SUM(price) AS cost, COUNT(book_id) as book_counts").group("month")
   end
 
   def year_borrowings
-    self.transactions.borrowing.select("DATE_TRUNC('year', trans_time) AS year, SUM(price) AS cost, COUNT(book_id) as book_counts").group("year")
+    self.transactions.borrowing.select("strftime('%Y', trans_time) AS year, SUM(price) AS cost, COUNT(book_id) as book_counts").group("year")
   end
 end

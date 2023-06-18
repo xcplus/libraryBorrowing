@@ -11,26 +11,23 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_06_18_000211) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "books", force: :cascade do |t|
     t.string "title"
-    t.integer "inventory", default: 0, comment: "库存"
-    t.integer "total_items", default: 0, comment: "总共有多少"
-    t.integer "borrowing_times", default: 0, comment: "借阅次数"
-    t.decimal "borrow_price", default: "0.0", comment: "借阅费用"
+    t.integer "inventory", default: 0
+    t.integer "total_items", default: 0
+    t.integer "borrowing_times", default: 0
+    t.decimal "borrow_price", default: "0.0"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "transactions", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "book_id", null: false
-    t.integer "trans_type", comment: "交易类型"
-    t.decimal "price", comment: "交易金额"
-    t.datetime "trans_time", comment: "交易时间"
-    t.integer "assoc_id", comment: "关联的返回id"
+    t.integer "user_id", null: false
+    t.integer "book_id", null: false
+    t.integer "trans_type"
+    t.decimal "price"
+    t.datetime "trans_time"
+    t.integer "assoc_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["book_id"], name: "index_transactions_on_book_id"

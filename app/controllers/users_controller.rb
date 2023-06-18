@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   def show
     borrow_books = Transaction.borrowing.includes(:book).where(user_id: @user.id, assoc_id: nil).select("books.title, book_id").references(:books)
     data = {
-      current_balance: user.balance,
+      current_balance: @user.balance,
       borrow_books: borrow_books.map{|book| {title: book.title, id: book.id}}
     }
     render_data(data: data)
