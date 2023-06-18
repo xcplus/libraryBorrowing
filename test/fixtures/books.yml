@@ -1,0 +1,16 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  inventory: 1
+  borrowing_times: 1
+  total_items: 2
+  borrow_price: 1
+
+
+two:
+  title: MyString
+  inventory: 1
+  borrowing_times: 1
+  total_items: 2
+  borrow_price: 1
